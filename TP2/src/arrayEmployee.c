@@ -84,10 +84,10 @@ int addEmployee(eEmployee* pArray,int limite)
 		{
 			auxIndice = findEmpty(pArray,limite);
 			if(auxIndice != -1){
-				Buffer.id = generarId();
-				Buffer.salary = salario;
-				Buffer.sector = sector;
-				Buffer.isEmpty = OCUPADO;
+				pArray[auxIndice].id = generarId();
+				pArray[auxIndice].salary = salario;
+				pArray[auxIndice].sector = sector;
+				pArray[auxIndice].isEmpty = OCUPADO;
 				strcpy(pArray[auxIndice].name, Buffer.name);
 				strcpy(pArray[auxIndice].lastName, Buffer.lastName);
 				retorno = 0;
