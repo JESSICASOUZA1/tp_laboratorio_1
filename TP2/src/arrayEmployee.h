@@ -16,7 +16,7 @@
 #define LEN_NAME 51
 #define OCUPADO 1
 #define VACIO 0
-#define MAX_EMPLOYEE 6
+#define MAX_EMPLOYEE 1000
 
 
 typedef struct

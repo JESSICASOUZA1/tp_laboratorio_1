@@ -179,7 +179,7 @@ int modifyEmployee(eEmployee* pArray,int limite)
 					"\nError,salario invalido.\n",1,1000000,QTY_REINTENTOS)==0)
 			{
 				{
-					pArray[indice] = Buffer;
+					pArray[indice].salary = salario;
 					retorno = 0;
 					printf("\nSalario alterado con exito.\n");
 				}
@@ -190,7 +190,7 @@ int modifyEmployee(eEmployee* pArray,int limite)
 			printf("Ingrese nuevo sector: ");
 			if(utn_getInt(&sector)==0)
 			{
-				pArray[indice] = Buffer;
+				pArray[indice].sector = sector;
 				retorno = 0;
 				printf("\nSector alterado con exito.\n");
 			}
@@ -263,15 +263,16 @@ int printEmployee(eEmployee* pArray,int limite)
 
 	if(pArray != NULL && limite > 0){
 		printf("ID:  Nombre:   Apellido:   Salario:  Sector: \n");
-		for(i = 0; i < limite; i++){
+		for(i = 0; i <= limite; i++){
 			if(pArray[i].isEmpty == OCUPADO)
 			{
 				printf("%d     %s        %s       $%.2f    %d\n",
 					pArray[i].id, pArray[i].name,
 					pArray[i].lastName, pArray[i].salary, pArray[i].sector);
+				retorno = 0;
 			}
 		}
-		retorno = 0;
+
 	}
 	return retorno;
 }
