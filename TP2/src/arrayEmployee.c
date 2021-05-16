@@ -88,7 +88,8 @@ int addEmployee(eEmployee* pArray,int limite)
 				Buffer.salary = salario;
 				Buffer.sector = sector;
 				Buffer.isEmpty = OCUPADO;
-				pArray[auxIndice] = Buffer;
+				strcpy(pArray[auxIndice].name, Buffer.name);
+				strcpy(pArray[auxIndice].lastName, Buffer.lastName);
 				retorno = 0;
 			}
 			printf("\nAlta de empleado com exito!\nID de empleado es: %d\n",pArray[auxIndice].id);
@@ -114,7 +115,7 @@ int findByID(eEmployee* pArray,int limite,int id)
     int i;
 
 	if(pArray != NULL && limite > 0) {
-		for(i = 0; i < limite; i++) {
+		for(i = 0; i <= limite; i++) {
 			if(pArray[i].id == id) {
 				retorno = i;
 				break;
@@ -158,7 +159,7 @@ int modifyEmployee(eEmployee* pArray,int limite)
 			if(utn_getName(Buffer.name,LEN_NAME,
 					"\nIngrese nuevo nombre del empleado: ","\nError,Nombre invalido.\n",QTY_REINTENTOS)==0)
 			{
-				pArray[indice] = Buffer;
+				strcpy(pArray[indice].name, Buffer.name);
 				retorno = 0;
 				printf("\nNombre alterado con exito.\n");
 			}
@@ -168,7 +169,7 @@ int modifyEmployee(eEmployee* pArray,int limite)
 			if(utn_getLastName(Buffer.lastName,LEN_NAME,
 					"\nIngrese nuevo apellido del empleado: ","\nError,Apellido invalido,\n",QTY_REINTENTOS)==0)
 			{
-				pArray[indice] = Buffer;
+				strcpy(pArray[indice].lastName, Buffer.lastName);
 				retorno = 0;
 				printf("\nApellido alterado con exito.\n");
 			}
@@ -233,7 +234,8 @@ int removeEmployee(eEmployee* pArray,int limite)
 			case 's':
 
 				pArray[indice].isEmpty = VACIO;
-				printf("\nEmpleado deletado con exito.\n");
+				//printf("\nEmpleado deletado con exito.\n");
+				printf("\n--->%10s    %10s    deletado con exito.<---\n",pArray[indice].name,pArray[indice].lastName);
 				retorno = 0;
 				break;
 
