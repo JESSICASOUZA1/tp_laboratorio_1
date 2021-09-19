@@ -11,4 +11,5 @@
 int getNum(int* numero,char* pMensaje);
 int getNumEntre(int* pNumero, char* pMensaje,int min, int max);
 
+
 #endif /* INPUT_H_ */

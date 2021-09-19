@@ -17,7 +17,6 @@
 int factorial(int numero)
 {
 	int resultado;
-
 	if(numero >= 1)
 	{
 		resultado = (numero * factorial(numero-1));

@@ -15,5 +15,4 @@ int multiplicar(int numeroA, int numeroB, float* pResultado);
 int dividir(int numeroA,int numeroB, float* pResultado);
 
 
-
 #endif /* CALCULOS_H_ */

@@ -29,8 +29,8 @@ int getNum(int* numero,char* pMensaje)
 /**
  *\brief: Solicita un numero entre minimo y maximo y devuelve resultado
  *\param: pMnesaje mostra un mensaje,
- *\param: min valida el numero entre minimo
- *\param: max valida el numero entre maximo
+ *\param: min valida el numero entre minimo.
+ *\param: max valida el numero entre maximo.
  *\return: Retorna el resultado.
  */
 int getNumEntre(int* pNumero, char* pMensaje,int min, int max)
