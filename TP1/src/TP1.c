@@ -50,8 +50,8 @@ int main(void)
 	do{
 		printf(
 		"\n Seleccione su opcion:\n"
-		"1. Ingresar 1er operando (A=%d)\n"
-		"2. Ingresar 2do operando (B=%d)\n"
+		"1. Ingresar primero operando (A=%d)\n"
+		"2. Ingresar segundo operando (B=%d)\n"
 		"3. Calcula la Suma (%d+%d)\n"
 		"4. Calcula la Resta (%d-%d)\n"
 		"5. Calcula la Multiplicacion(%d*%d)\n"

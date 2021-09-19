@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "persona.h"
-#include "arrayEmployee.h"
+#include "empleado.h"
 
 static int getString(char* array, int len);
 static int getName(char* pResultado, int longitud);
@@ -27,7 +27,7 @@ static int isDNI(char* cadena, int longitud);
  * */
 static int getString(char* array, int len)
 {
-	int ret=-1;
+	int retorno = -1;
 	char bufferString[LEN_STRING];
 	if(array!=NULL && len>0)
 	{
@@ -41,11 +41,11 @@ static int getString(char* array, int len)
 			if(strnlen(bufferString,sizeof(bufferString))<=len)
 			{
 				strncpy(array,bufferString,len);
-				ret=0;
+				retorno = 0;
 			}
 		}
 	}
-	return ret;
+	return retorno;
 }
 
 /**
@@ -156,6 +156,12 @@ static int isSurname(char* cadena,int longitud)
 	return retorno;
 }
 
+/*
+ * \brief valida un DNI
+ * \param pResultado: puntero a char donde se guarda el valor a mostrar en el main.
+ * \param longitud entero que marca la longitud de la cadena a ingresar.
+ * \return devuelve 0 en caso de Exito y -1 en caso de Error.
+ * */
 static int isDNI(char* cadena, int longitud)
 {
 	int i=0;
@@ -219,6 +225,7 @@ static int isDNI(char* cadena, int longitud)
 	}
 	return retorno;
 }
+
 /*
  * \brief Pide un Nombre al usuario.
  * \param pResultado: puntero a char donde se guarda el valor a mostrar en el main.
@@ -308,5 +315,6 @@ int utn_getDni(char* pResultado, int longitud,char* pMensaje, char* pMensajeErro
 	}
 	return retorno;
 }
+
 
 
